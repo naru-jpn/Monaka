@@ -3,7 +3,7 @@
 
 ## Overview
 
-Monaka is a Library for iOS to convert swifty values and NSData each other.
+Monaka is a Library to convert swifty values and NSData each other __to support immutable data handling__.
 
 ## Usage
 
