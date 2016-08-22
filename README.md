@@ -7,7 +7,9 @@ Monaka is a Library to convert swifty values and NSData each other __to support 
 
 ## Usage
 
-#### 1.Prepare
+### Pack/Unpack Standard Variables
+
+#### 1.Activate
 
 Write activation codes.
 
@@ -20,7 +22,6 @@ func application(application: UIApplication, didFinishLaunchingWithOptions launc
         
   return true
 }
-
 ```
 
 #### 2.Pack/Unpack
@@ -33,9 +34,60 @@ You can Pack/Unpack `Packable` variable.
 let value: Int = 10
 let data: NSData = Monaka.pack(value) 
 // Unpack
-let unpacked: Int? = Monaka.unpack(data) as? Int
+let unpacked = Monaka.unpack(data) as? Int
 ```
 
+### Using Custom Struct
 
+#### 1.Make a custom struct confirm protocol `CustomPackable`
 
+```swift
+// Protocol `CustomPackable`
+struct SampleStruct: CustomPackable {
 
+  let id: String
+
+  /* Implementations */
+  
+  // Implement function ([String : Packable] -> Packable?) named 'restoreProcedure'
+  static var restoreProcedure: [String : Packable] -> Packable? = { (dictionary: [String : Packable]) -> Packable? in
+        guard let id = dictionary["id"] as? String else {
+            return nil
+        }
+        return SampleStruct1(id: id)
+    }
+}
+```
+
+#### 2.Activate
+
+Activate your custom struct.
+
+```
+func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
+  Monaka.activateStandardPackables(withCustomStructActivations: {
+    SampleStruct.activatePack()
+  })
+  
+  // Other codes...
+        
+  return true
+}
+```
+
+#### 3.Pack/Unpack
+
+You can Pack/Unpack as standard types.
+
+```
+// Pack
+let value: SampleStruct = SampleStruct(id: NSUUID().UUIDString)
+let data: NSData = Monaka.pack(value) 
+// Unpack
+let unpacked = Monaka.unpack(data) as? SampleStruct
+```
+
+## License
+
+Monaka is released under the MIT license. See LICENSE for details.
