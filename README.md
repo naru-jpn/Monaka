@@ -1,4 +1,4 @@
-<img src="https://github.com/naru-jpn/Monaka/blob/master/Monaka.png?raw=true" width="300" />
+<img src="https://github.com/naru-jpn/Monaka/blob/master/Logo.png?raw=true" width="300" />
 
 # Monaka
 [![Swift](https://img.shields.io/badge/swift-2.2-orange.svg?style=flat)](#)
