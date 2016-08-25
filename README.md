@@ -1,6 +1,5 @@
-<img src="https://github.com/naru-jpn/Monaka/blob/master/Logo.png?raw=true" width="300" />
+<img src="https://github.com/naru-jpn/Monaka/blob/master/Logo2.png?raw=true" width="260" />
 
-# Monaka
 [![Swift](https://img.shields.io/badge/swift-2.2-orange.svg?style=flat)](#)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Platform](https://img.shields.io/badge/platform-ios-lightgrey.svg?style=flat)](#)
