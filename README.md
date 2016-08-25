@@ -8,6 +8,8 @@
 
 ## Overview
 
+<img src="https://github.com/naru-jpn/Monaka/blob/master/WhatMonaka.png?raw=true" width="700" />
+
 Monaka is a Library to convert swifty values and NSData each other __to support immutable data handling__.
 
 ## Usage
