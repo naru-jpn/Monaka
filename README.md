@@ -9,7 +9,7 @@
 
 Monaka convert custom struct to NSData. 
 
-<img src="https://github.com/naru-jpn/Monaka/blob/master/WhatMonaka.png?raw=true" width="700" />
+<img src="https://github.com/naru-jpn/Monaka/blob/master/WhatMonaka.png?raw=true" width="600" />
 
 ## Usage
 
