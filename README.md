@@ -43,7 +43,7 @@ let data: NSData = Monaka.pack(value)
 let unpacked = Monaka.unpack(data) as? Int
 ```
 
-### Using Custom Struct
+### Custom Struct
 
 #### 1.Make a custom struct confirm protocol `CustomPackable`
 
