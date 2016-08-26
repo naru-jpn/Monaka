@@ -13,6 +13,10 @@ Monaka convert custom struct and fundamental values to NSData (also nested array
 
 <img src="https://github.com/naru-jpn/Monaka/blob/master/WhatMonaka.png?raw=true" width="400" />
 
+## Purpose
+
+You can persistent store of your defined struct. Your defined struct is for example 'latest selected tab index', 'array of struct fetched from API' or 'current application state'. I think these should be represented as simple struct and can be stored in application. Converted data can be written in file or NSUserDefault.
+
 ## Installation
 
 ### Carthage
