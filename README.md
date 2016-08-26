@@ -11,70 +11,60 @@ Monaka convert custom struct to NSData.
 
 <img src="https://github.com/naru-jpn/Monaka/blob/master/WhatMonaka.png?raw=true" width="600" />
 
-## Usage
+## Installation
 
-### Pack/Unpack Standard Variables
+### Carthage
 
-#### 1.Activate
-
-Write activation codes.
-
-```swift
-func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        
-  Monaka.activateStandardPackables(withCustomStructActivations: { /* Write here if you use your struct to pack. */ })
-  
-  // Other codes...
-        
-  return true
-}
+```
+github "naru-jpn/Monaka"
 ```
 
-#### 2.Pack/Unpack
+### CocoaPods
 
-You can Pack/Unpack `Packable` variable.
+```
+pod 'Monaka'
+```
+
+## Usage
+
+### For Standard Variables
+
+`Packable` variable ⇄ NSData.
 
 ```swift
-// For example, simple Int variable.
 // Pack
 let value: Int = 10
-let data: NSData = Monaka.pack(value) 
+let data: NSData = Monaka.pack(value)
+
 // Unpack
 let unpacked = Monaka.unpack(data) as? Int
 ```
 
-### Custom Struct
+### For Custom Struct
 
-#### 1.Make a custom struct confirm protocol `CustomPackable`
+#### 1.Make a custom struct confirming protocol `CustomPackable`
 
 ```swift
-// Protocol `CustomPackable`
-struct SampleStruct: CustomPackable {
-
-  let id: String
-
-  /* Implementations */
-  
-  // Implement function ([String : Packable] -> Packable?) named 'restoreProcedure'
-  static var restoreProcedure: [String : Packable] -> Packable? = { (dictionary: [String : Packable]) -> Packable? in
-        guard let id = dictionary["id"] as? String else {
+struct Sample: CustomPackable {
+    
+    let id: String
+    
+    // Return new struct from applied properties.
+    static var restoreProcedure: ([String : Packable] -> Packable?) = { (properties: [String : Packable]) -> Packable? in
+        guard let id = properties["id"] as? String else {
             return nil
         }
-        return SampleStruct1(id: id)
+        return Sample(id: id)
     }
 }
 ```
 
-#### 2.Activate
-
-Activate your custom struct.
+#### 2.Activate your custom struct.
 
 ```
 func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-  Monaka.activateStandardPackables(withCustomStructActivations: {
-    SampleStruct.activatePack()
-  })
+  Monaka.activate(Sample)
   
   // Other codes...
         
