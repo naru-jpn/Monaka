@@ -7,7 +7,7 @@
 
 ## Overview
 
-Monaka convert custom struct to NSData. 
+Monaka convert custom struct (also nested array and dictionary) to NSData. 
 
 <img src="https://github.com/naru-jpn/Monaka/blob/master/WhatMonaka.png?raw=true" width="600" />
 
