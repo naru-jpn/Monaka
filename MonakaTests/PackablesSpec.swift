@@ -16,11 +16,7 @@ class PackablesSpec: QuickSpec {
     override func spec() {
      
         describe("packables", closure: {
-        
-            beforeEach {
-                Monaka.activateStandardPackables(withCustomStructActivations: nil)
-            }
-            
+                    
             describe("Int", closure: {
                 
                 context("for positive", {

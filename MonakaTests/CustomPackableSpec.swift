@@ -52,9 +52,7 @@ class CustomPackableSpec: QuickSpec {
         describe("SampleStruct1", {
             
             beforeEach {
-                Monaka.activateStandardPackables(withCustomStructActivations: {
-                    SampleStruct1.activatePack()
-                })
+                Monaka.activate(SampleStruct1)
             }
             
             it("can be packed and unpacked", closure: {
@@ -69,9 +67,7 @@ class CustomPackableSpec: QuickSpec {
         describe("SampleStruct2", {
             
             beforeEach {
-                Monaka.activateStandardPackables(withCustomStructActivations: {
-                    SampleStruct2.activatePack()
-                })
+                Monaka.activate(SampleStruct2)
             }
             
             it("can be packed and unpacked", closure: {

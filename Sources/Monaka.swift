@@ -20,6 +20,9 @@ public class Monaka {
     /// Store procedure to restore data.
     private var restoreProcedures: [String: ((dictionary: [String: Packable]) -> Packable?)] = [:]
 
+    /// Once token
+    private static var token: dispatch_once_t = 0
+    
     /// Register procedure to unpack data.
     /// - parameter identifier: string to specify struct
     /// - parameter procedure: procedure to store
@@ -92,13 +95,21 @@ public class Monaka {
     /// - parameter data: data to unpack
     /// - returns: unpacked object
     public class func unpack(data data: NSData) -> Packable? {
+        
+        dispatch_once(&token) {
+            self.activateStandardPackables()
+        }
+        
         return self.sharedInstance.unpack(data: data)
     }
 
+    public class func activate<T: CustomPackable>(class: T.Type) -> Void {
+        T.activatePack()
+    }
+    
     /// Register procedures for unpacking and restoring struct.
     /// - parameter withCustomStructActivations: closure to register procedures for custom struct
-    public class func activateStandardPackables(withCustomStructActivations withCustomStructActivations:(() -> Void)?) {
-        
+    public class func activateStandardPackables() -> Void {
         Int.activatePack()
         UInt.activatePack()
         Float.activatePack()
@@ -106,9 +117,5 @@ public class Monaka {
         String.activatePack()
         [Packable].activatePack()
         [String: Packable].activatePack()
-        
-        if let customStructActivations = withCustomStructActivations {
-            customStructActivations()
-        }
     }
 }

@@ -15,6 +15,7 @@
 		4379338E1D656184009C1D13 /* Monaka.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4379338A1D656184009C1D13 /* Monaka.swift */; };
 		4379338F1D656184009C1D13 /* Packable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4379338B1D656184009C1D13 /* Packable.swift */; };
 		437933901D656184009C1D13 /* Packables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4379338C1D656184009C1D13 /* Packables.swift */; };
+		43B5F6B21D6FDB6A00399A8B /* Sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B5F6B11D6FDB6A00399A8B /* Sample.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		4379338A1D656184009C1D13 /* Monaka.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Monaka.swift; sourceTree = "<group>"; };
 		4379338B1D656184009C1D13 /* Packable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Packable.swift; sourceTree = "<group>"; };
 		4379338C1D656184009C1D13 /* Packables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Packables.swift; sourceTree = "<group>"; };
+		43B5F6B11D6FDB6A00399A8B /* Sample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sample.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 			children = (
 				437933541D64AB0E009C1D13 /* AppDelegate.swift */,
 				437933561D64AB0E009C1D13 /* ViewController.swift */,
+				43B5F6B11D6FDB6A00399A8B /* Sample.swift */,
 				4379335B1D64AB0E009C1D13 /* Assets.xcassets */,
 				4379335D1D64AB0E009C1D13 /* LaunchScreen.storyboard */,
 				437933601D64AB0E009C1D13 /* Info.plist */,
@@ -164,6 +167,7 @@
 				437933901D656184009C1D13 /* Packables.swift in Sources */,
 				437933571D64AB0E009C1D13 /* ViewController.swift in Sources */,
 				437933551D64AB0E009C1D13 /* AppDelegate.swift in Sources */,
+				43B5F6B21D6FDB6A00399A8B /* Sample.swift in Sources */,
 				4379338F1D656184009C1D13 /* Packable.swift in Sources */,
 				4379338E1D656184009C1D13 /* Monaka.swift in Sources */,
 				4379338D1D656184009C1D13 /* CustomPackable.swift in Sources */,
@@ -308,6 +312,7 @@
 				437933651D64AB0E009C1D13 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

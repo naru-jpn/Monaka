@@ -15,9 +15,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        Monaka.activateStandardPackables(withCustomStructActivations: {
+        Monaka.activate(Sample)
+                
+        let sample = Sample(id: NSUUID().UUIDString)
+        let data = Monaka.pack(sample)
+        debugPrint("sample: \(Monaka.unpack(data: data))")
         
-        })
+        let samples = [Sample(id: NSUUID().UUIDString), Sample(id: NSUUID().UUIDString), Sample(id: NSUUID().UUIDString)]
+        let data2 = Monaka.pack(samples)
+        debugPrint("samples: \(Monaka.unpack(data: data2))")
         
         return true
     }
