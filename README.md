@@ -61,7 +61,7 @@ struct Sample: CustomPackable {
 
 #### 2.Activate your custom struct.
 
-```
+```swift
 func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
   Monaka.activate(Sample)
@@ -76,7 +76,7 @@ func application(application: UIApplication, didFinishLaunchingWithOptions launc
 
 You can Pack/Unpack as standard types.
 
-```
+```swift
 // Pack
 let value: SampleStruct = SampleStruct(id: NSUUID().UUIDString)
 let data: NSData = Monaka.pack(value) 
