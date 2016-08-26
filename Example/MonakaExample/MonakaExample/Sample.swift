@@ -12,12 +12,10 @@ struct Sample: CustomPackable {
     
     let id: String
     
-    static var restoreProcedure: ([String : Packable] -> Packable?) {
-        return { dictionary in
-            guard let id = dictionary["id"] as? String else {
-                return nil
-            }
-            return Sample(id: id)
+    static var restoreProcedure: ([String : Packable] -> Packable?) = { (properties: [String : Packable]) -> Packable? in
+        guard let id = properties["id"] as? String else {
+            return nil
         }
+        return Sample(id: id)
     }
 }
