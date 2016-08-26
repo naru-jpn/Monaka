@@ -1,6 +1,5 @@
-<img src="https://github.com/naru-jpn/Monaka/blob/master/Monaka.png?raw=true" width="300">
+<img src="https://github.com/naru-jpn/Monaka/blob/master/Logo.png?raw=true" width="260" />
 
-# Monaka
 [![Swift](https://img.shields.io/badge/swift-2.2-orange.svg?style=flat)](#)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Platform](https://img.shields.io/badge/platform-ios-lightgrey.svg?style=flat)](#)
@@ -8,7 +7,9 @@
 
 ## Overview
 
-Monaka is a Library to convert swifty values and NSData each other __to support immutable data handling__.
+Monaka convert custom struct to NSData. 
+
+<img src="https://github.com/naru-jpn/Monaka/blob/master/WhatMonaka.png?raw=true" width="700" />
 
 ## Usage
 
@@ -42,7 +43,7 @@ let data: NSData = Monaka.pack(value)
 let unpacked = Monaka.unpack(data) as? Int
 ```
 
-### Using Custom Struct
+### Custom Struct
 
 #### 1.Make a custom struct confirm protocol `CustomPackable`
 
